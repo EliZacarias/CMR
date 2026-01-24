@@ -6,12 +6,10 @@
     <title>CMR | Equipos de Seguridad Personal</title>
     <!-- Tailwind CSS para diseño rápido y moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Iconos Lucide -->
+    <!-- Iconos Lucide (Versión estable) -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Google Fonts: Noto Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Markdown Parser para respuestas de IA -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <script>
         tailwind.config = {
@@ -43,27 +41,7 @@
             background-color: #003366;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2305407a' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-        /* Animación para el botón de IA */
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.5); transform: scale(1); }
-            50% { box-shadow: 0 0 20px rgba(255, 102, 0, 0.8); transform: scale(1.05); }
-        }
-        .ai-btn-pulse {
-            animation: pulse-glow 2s infinite;
-        }
-        /* Estilos para el chat markdown */
-        .prose p { margin-bottom: 0.5em; }
-        .prose strong { color: #003366; }
-        .prose ul { list-style-type: disc; padding-left: 1.2em; margin-bottom: 0.5em; }
     </style>
-    <!-- Import map for Gemini API -->
-    <script type="importmap">
-      {
-        "imports": {
-          "@google/generative-ai": "https://esm.run/@google/generative-ai"
-        }
-      }
-    </script>
 </head>
 <body class="font-sans text-darkgray bg-gray-50">
 
@@ -91,7 +69,7 @@
                         <!-- Dropdown Content -->
                         <div class="absolute left-0 mt-0 w-56 bg-white rounded-md shadow-xl py-2 hidden group-hover:block transform transition-all duration-200 origin-top-left border-t-4 border-safety">
                             <a href="#chalecos" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center">
-                                <i data-lucide="vest" class="h-4 w-4 mr-2 text-safety"></i> Chalecos Industriales
+                                <i data-lucide="layers" class="h-4 w-4 mr-2 text-safety"></i> Chalecos Industriales
                             </a>
                             <a href="#ropa-trabajo" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center">
                                 <i data-lucide="hard-hat" class="h-4 w-4 mr-2 text-safety"></i> Ropa de Trabajo
@@ -121,7 +99,7 @@
             <div class="bg-blue-950/50">
                 <p class="px-6 py-2 text-xs text-blue-300 font-bold uppercase tracking-wider">Catálogo</p>
                 <a href="#chalecos" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800 flex items-center">
-                    <i data-lucide="vest" class="h-4 w-4 mr-2"></i> Chalecos
+                    <i data-lucide="layers" class="h-4 w-4 mr-2"></i> Chalecos
                 </a>
                 <a href="#ropa-trabajo" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800 flex items-center">
                     <i data-lucide="hard-hat" class="h-4 w-4 mr-2"></i> Ropa de Trabajo
@@ -136,8 +114,7 @@
     <section id="inicio" class="hero-pattern pt-32 pb-20 text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-10 md:mb-0">
-                <span class="bg-safety text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-2 inline-block">Catálogo 2025
-                </span>
+                <span class="bg-safety text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mb-2 inline-block">Catálogo 2026</span>
                 <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
                     Equipos de Seguridad <br> Personal y Corporativo
                 </h1>
@@ -153,17 +130,45 @@
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <!-- Placeholder SVG para imagen hero -->
-                <div class="w-full max-w-md bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 shadow-2xl">
-                    <div class="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 rounded flex items-center justify-center text-corporate">
-                        <div class="text-center p-8">
-                            <i data-lucide="hard-hat" class="h-16 w-16 mx-auto mb-2 opacity-50"></i>
-                            <p class="font-bold text-lg opacity-75">Imagen Principal de Campaña</p>
-                            <p class="text-xs opacity-50">(Reemplazar con foto real de trabajadores)</p>
+            
+            <!-- SECCIÓN DE VIDEO PRINCIPAL -->
+            <div class="md:w-1/2 flex justify-center relative">
+                <!-- Marco decorativo del video -->
+                <div class="w-full max-w-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 shadow-2xl relative overflow-hidden group">
+                    
+                    <!-- Etiqueta de "En Acción" -->
+                    <div class="absolute top-6 right-6 z-10 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center animate-pulse shadow-lg pointer-events-none">
+                        <span class="w-2 h-2 bg-white rounded-full mr-2"></span> EN VIVO
+                    </div>
+
+                    <!-- Video Player (YouTube Short Embed) -->
+                    <div class="relative rounded-lg overflow-hidden aspect-video bg-gray-900 group">
+                        <iframe 
+                            class="absolute inset-0 w-full h-full scale-110"
+                            src="https://www.youtube.com/embed/9dhKwFsdpWU?autoplay=1&mute=1&loop=1&playlist=9dhKwFsdpWU&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1" 
+                            title="Video Promocional CMR"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen
+                        ></iframe>
+                        
+                        <!-- Overlay transparente para evitar clicks accidentales y mantener estilo "fondo" (Opcional, quitar si quieres que pausen el video) -->
+                        <div class="absolute inset-0 bg-transparent"></div>
+
+                        <!-- Overlay gradiente para mejorar legibilidad si se pone texto encima -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+                        
+                        <!-- Etiqueta inferior -->
+                        <div class="absolute bottom-4 left-4 text-white text-xs font-medium flex items-center gap-2 pointer-events-none">
+                            <i data-lucide="play-circle" class="h-4 w-4"></i> Video Promocional
                         </div>
                     </div>
                 </div>
+                
+                <!-- Elemento decorativo detrás del video -->
+                <div class="absolute -z-10 top-10 -right-4 w-24 h-24 bg-safety/20 rounded-full blur-xl"></div>
+                <div class="absolute -z-10 -bottom-4 -left-4 w-32 h-32 bg-corporate/40 rounded-full blur-xl"></div>
             </div>
         </div>
     </section>
@@ -213,17 +218,22 @@
             <!-- Categoría 1: Chalecos -->
             <div id="chalecos" class="section-anchor mb-16">
                 <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center">
-                    <i data-lucide="vest" class="mr-2 h-6 w-6 text-gray-400"></i>
+                    <i data-lucide="layers" class="mr-2 h-6 w-6 text-gray-400"></i>
                     Chalecos Industriales
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Producto 1 -->
                     <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden">
-                            <!-- Placeholder -->
-                            <i data-lucide="vest" class="h-16 w-16 text-gray-400"></i>
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                        <!-- Imagen Interactiva -->
+                        <div onclick="openProductDetail('Chaleco Brigadista Pro', 'layers', 'Cierre reforzado y cintas reflejantes de alta luminosidad.', '4 Compartimentos | Tallas CH-EG')" 
+                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                            <!-- Placeholder Icon -->
+                            <i data-lucide="layers" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
+                            <!-- Overlay Hover -->
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                            </div>
                         </div>
                         <div class="p-6">
                             <h4 class="font-bold text-corporate text-lg mb-2">Brigadista Pro</h4>
@@ -240,8 +250,12 @@
 
                     <!-- Producto 2 -->
                     <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div class="h-48 bg-gray-200 flex items-center justify-center relative">
-                            <i data-lucide="vest" class="h-16 w-16 text-gray-400"></i>
+                        <div onclick="openProductDetail('Chaleco Ejecutivo Premium', 'layers', 'Funcionalidad operativa con estética profesional.', '9 Compartimentos | Alta Capacidad')" 
+                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                            <i data-lucide="layers" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                            </div>
                         </div>
                         <div class="p-6">
                             <h4 class="font-bold text-corporate text-lg mb-2">Ejecutivo Premium</h4>
@@ -258,8 +272,12 @@
 
                     <!-- Producto 3 -->
                     <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div class="h-48 bg-gray-200 flex items-center justify-center relative">
-                            <i data-lucide="layers" class="h-16 w-16 text-gray-400"></i>
+                         <div onclick="openProductDetail('Chaleco Tipo Paño', 'layers', 'Confección robusta ideal para climas frescos.', '6 Compartimentos | Cierre Central')" 
+                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                            <i data-lucide="layers" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                            </div>
                         </div>
                         <div class="p-6">
                             <h4 class="font-bold text-corporate text-lg mb-2">Tipo Paño</h4>
@@ -276,8 +294,12 @@
 
                     <!-- Producto 4 -->
                     <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div class="h-48 bg-gray-200 flex items-center justify-center relative">
-                            <i data-lucide="backpack" class="h-16 w-16 text-gray-400"></i>
+                        <div onclick="openProductDetail('Chaleco Reflejante Mochila', 'backpack', 'Diseño ergonómico que distribuye el peso.', '5 Compartimentos | Ajuste Cómodo')" 
+                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                            <i data-lucide="backpack" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                            </div>
                         </div>
                         <div class="p-6">
                             <h4 class="font-bold text-corporate text-lg mb-2">Reflejante Mochila</h4>
@@ -305,8 +327,12 @@
                     
                     <!-- Producto 5 -->
                     <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div class="h-48 bg-gray-200 flex items-center justify-center relative">
-                            <i data-lucide="shirt" class="h-16 w-16 text-gray-400"></i>
+                         <div onclick="openProductDetail('Camisola Industrial', 'shirt', 'Mezclilla uso rudo 14oz o ligera 10oz.', 'Azul Marino/Claro | Durabilidad')" 
+                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                            <i data-lucide="shirt" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                            </div>
                         </div>
                         <div class="p-6">
                             <h4 class="font-bold text-corporate text-lg mb-2">Camisola Industrial</h4>
@@ -323,8 +349,12 @@
 
                      <!-- Producto 6 -->
                      <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div class="h-48 bg-gray-200 flex items-center justify-center relative">
-                            <i data-lucide="activity" class="h-16 w-16 text-gray-400"></i>
+                        <div onclick="openProductDetail('Bata de Taller', 'activity', 'Corte amplio para movilidad en laboratorio.', '3 Compartimentos | Tallas CH-EG')" 
+                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                            <i data-lucide="activity" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                            </div>
                         </div>
                         <div class="p-6">
                             <h4 class="font-bold text-corporate text-lg mb-2">Bata de Taller</h4>
@@ -341,8 +371,12 @@
 
                     <!-- Producto 7 -->
                     <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div class="h-48 bg-gray-200 flex items-center justify-center relative">
-                            <i data-lucide="umbrella" class="h-16 w-16 text-gray-400"></i>
+                        <div onclick="openProductDetail('Pantalón Impermeable', 'umbrella', 'Blindaje contra líquidos con cintas reflejantes.', '2 Bolsillos | Alta Visibilidad')" 
+                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                            <i data-lucide="umbrella" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                            </div>
                         </div>
                         <div class="p-6">
                             <h4 class="font-bold text-corporate text-lg mb-2">Pantalón Impermeable</h4>
@@ -359,8 +393,12 @@
 
                     <!-- Producto 8 -->
                     <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div class="h-48 bg-gray-200 flex items-center justify-center relative">
-                            <i data-lucide="bike" class="h-16 w-16 text-gray-400"></i>
+                         <div onclick="openProductDetail('Pantalón Moto', 'bike', 'Corte ergonómico resistente a la fricción.', 'Refuerzo en zonas clave')" 
+                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                            <i data-lucide="bike" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                            </div>
                         </div>
                         <div class="p-6">
                             <h4 class="font-bold text-corporate text-lg mb-2">Pantalón Moto</h4>
@@ -491,13 +529,13 @@
                 <p class="text-gray-400 text-sm">Equipos de Seguridad Personal</p>
             </div>
             <div class="text-center md:text-right">
-                <p class="text-sm text-gray-400">&copy; 2024 CMR Seguridad. Todos los derechos reservados.</p>
+                <p class="text-sm text-gray-400">&copy; 2026 CMR Seguridad. Todos los derechos reservados.</p>
                 <p class="text-xs text-gray-600 mt-1">Diseño web basado en catálogo PDF.</p>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL SIMPLE PARA "COTIZAR" -->
+    <!-- MODAL SIMPLE PARA "COTIZAR" (Formulario rápido) -->
     <div id="quote-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg max-w-md w-full p-6 relative shadow-2xl transform transition-all">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
@@ -523,176 +561,46 @@
         </div>
     </div>
 
-    <!-- AI CHATBOT WIDGET -->
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-40">
-        <!-- Chat Toggle Button -->
-        <button onclick="toggleChat()" class="ai-btn-pulse bg-corporate text-white p-4 rounded-full shadow-2xl hover:bg-blue-800 transition-colors flex items-center justify-center border-4 border-white">
-            <i data-lucide="sparkles" class="h-8 w-8 text-safety"></i>
-        </button>
+    <!-- MODAL DE DETALLE DE PRODUCTO (NUEVO) -->
+    <div id="product-detail-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-4xl w-full relative shadow-2xl flex flex-col md:flex-row overflow-hidden max-h-[90vh]">
+            <!-- Botón Cerrar -->
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 bg-white/50 hover:bg-white rounded-full p-1 text-gray-600 hover:text-red-500 transition-colors">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
 
-        <!-- Chat Window -->
-        <div id="ai-chat-window" class="hidden absolute bottom-20 right-0 w-80 sm:w-96 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col h-[500px]">
-            <!-- Chat Header -->
-            <div class="bg-corporate p-4 text-white flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="bot" class="h-6 w-6 text-safety"></i>
-                    <div>
-                        <h4 class="font-bold text-sm">Asistente Virtual CMR</h4>
-                        <p class="text-xs text-blue-200">Experto en Seguridad IA ✨</p>
-                    </div>
-                </div>
-                <button onclick="toggleChat()" class="text-white hover:text-safety">
-                    <i data-lucide="x" class="h-5 w-5"></i>
-                </button>
-            </div>
-            
-            <!-- Chat Messages -->
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-50 space-y-4">
-                <div class="flex items-start">
-                    <div class="bg-corporate p-2 rounded-full mr-2 flex-shrink-0">
-                        <i data-lucide="bot" class="h-4 w-4 text-white"></i>
-                    </div>
-                    <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 text-sm text-gray-700">
-                        Hola, soy tu experto en seguridad CMR. Describe tu trabajo o necesidad y te recomendaré el mejor equipo.
-                    </div>
-                </div>
+            <!-- Imagen Grande (Izquierda) -->
+            <div class="md:w-1/2 bg-gray-100 flex items-center justify-center p-12 relative">
+                 <div id="detail-image-container" class="text-corporate">
+                     <!-- El icono o imagen se inyectará aquí -->
+                     <i id="detail-icon" data-lucide="package" class="h-48 w-48"></i>
+                 </div>
             </div>
 
-            <!-- Chat Input -->
-            <div class="p-3 bg-white border-t border-gray-200">
-                <form onsubmit="event.preventDefault(); handleAIChat();" class="flex space-x-2">
-                    <input id="chat-input" type="text" placeholder="Ej: Trabajo en carreteras de noche..." class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-corporate text-sm">
-                    <button type="submit" id="chat-send-btn" class="bg-safety text-white p-2 rounded-md hover:bg-orange-600 transition-colors">
-                        <i data-lucide="send" class="h-4 w-4"></i>
-                    </button>
-                </form>
+            <!-- Detalles (Derecha) -->
+            <div class="md:w-1/2 p-8 flex flex-col justify-center overflow-y-auto">
+                <div class="mb-auto">
+                    <span class="bg-blue-100 text-corporate text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Detalles del Producto</span>
+                    <h2 id="detail-title" class="text-3xl font-bold text-corporate mb-4">Nombre del Producto</h2>
+                    <p id="detail-desc" class="text-gray-600 text-lg mb-6 leading-relaxed">Descripción detallada del producto...</p>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 mb-8">
+                        <h4 class="text-sm font-bold text-safety uppercase mb-2 flex items-center">
+                            <i data-lucide="info" class="h-4 w-4 mr-2"></i> Especificaciones
+                        </h4>
+                        <p id="detail-specs" class="text-gray-700 font-medium">Especificaciones...</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3 pt-4 border-t border-gray-100">
+                    <a id="detail-whatsapp-btn" href="#" target="_blank" class="block w-full bg-green-600 text-white py-4 rounded-lg text-center font-bold text-lg hover:bg-green-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                        <i data-lucide="message-circle" class="h-6 w-6"></i> Cotizar Ahora por WhatsApp
+                    </a>
+                    <p class="text-center text-xs text-gray-400">Respuesta inmediata en horario laboral.</p>
+                </div>
             </div>
         </div>
     </div>
-
-    <script type="module">
-        import { GoogleGenerativeAI } from "@google/generative-ai";
-
-        let genAI;
-        let model;
-
-        // Initialize Gemini API
-        function initGemini() {
-            const apiKey = ""; // System provides this
-            genAI = new GoogleGenerativeAI(apiKey);
-            model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-09-2025" });
-        }
-
-        initGemini();
-
-        window.handleAIChat = async function() {
-            const inputEl = document.getElementById('chat-input');
-            const messagesEl = document.getElementById('chat-messages');
-            const sendBtn = document.getElementById('chat-send-btn');
-            const userText = inputEl.value.trim();
-
-            if (!userText) return;
-
-            // Add User Message
-            const userMsgDiv = document.createElement('div');
-            userMsgDiv.className = 'flex items-start justify-end';
-            userMsgDiv.innerHTML = `
-                <div class="bg-corporate text-white p-3 rounded-lg shadow-sm text-sm max-w-[80%]">
-                    ${userText}
-                </div>
-            `;
-            messagesEl.appendChild(userMsgDiv);
-            
-            inputEl.value = '';
-            inputEl.disabled = true;
-            sendBtn.disabled = true;
-            messagesEl.scrollTop = messagesEl.scrollHeight;
-
-            // Add Loading Indicator
-            const loadingDiv = document.createElement('div');
-            loadingDiv.id = 'ai-loading';
-            loadingDiv.className = 'flex items-start';
-            loadingDiv.innerHTML = `
-                <div class="bg-corporate p-2 rounded-full mr-2 flex-shrink-0">
-                    <i data-lucide="bot" class="h-4 w-4 text-white"></i>
-                </div>
-                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 text-sm text-gray-500 italic">
-                    Escribiendo recomendación...
-                </div>
-            `;
-            messagesEl.appendChild(loadingDiv);
-            messagesEl.scrollTop = messagesEl.scrollHeight;
-
-            try {
-                // System Prompt with Catalog Data
-                const systemPrompt = `
-                    Eres un asistente experto en ventas y seguridad industrial de la empresa CMR (Equipos de Seguridad Personal).
-                    Tu objetivo es recomendar productos del siguiente catálogo basándote en la descripción del trabajo o necesidad del usuario.
-                    
-                    CATÁLOGO DE PRODUCTOS CMR:
-                    1. Chaleco Brigadista Pro: Ideal para identificación de personal, cierre reforzado, cintas reflejantes de alta luminosidad. (Tallas CH-EG, 4 compartimentos).
-                    2. Chaleco Ejecutivo Premium: Para supervisores/jefes, estética profesional, 9 compartimentos de alta capacidad.
-                    3. Chaleco Tipo Paño: Para climas frescos o protección textil, tejido robusto, 6 compartimentos.
-                    4. Chaleco Reflejante Mochila: Diseño ergonómico tipo mochila, distribuye peso, libertad de movimiento, 5 compartimentos.
-                    5. Camisola Industrial: Mezclilla resistente (14oz uso rudo o 10oz ligera), durabilidad superior.
-                    6. Bata de Taller: Corte amplio para laboratorios, talleres o almacenes, 3 compartimentos.
-                    7. Pantalón Impermeable: Blindaje contra líquidos, cintas reflejantes en pantorrillas, alta visibilidad.
-                    8. Pantalón Motociclista: Corte ergonómico, reforzado contra fricción, para repartidores.
-
-                    REGLAS:
-                    - Responde siempre en Español de manera profesional y amable.
-                    - Sé conciso (máximo 3 frases).
-                    - Usa formato Markdown (negritas para nombres de productos).
-                    - Si la consulta no tiene nada que ver con ropa de trabajo o seguridad, indica amablemente que solo puedes asistir con productos del catálogo CMR.
-                    - Finaliza invitando a pedir una cotización.
-                `;
-
-                const result = await model.generateContent({
-                    contents: [
-                        { role: 'user', parts: [{ text: systemPrompt + "\n\nUsuario: " + userText }] }
-                    ]
-                });
-
-                const responseText = result.response.text();
-
-                // Remove loading
-                document.getElementById('ai-loading').remove();
-
-                // Add AI Message
-                const aiMsgDiv = document.createElement('div');
-                aiMsgDiv.className = 'flex items-start';
-                aiMsgDiv.innerHTML = `
-                    <div class="bg-corporate p-2 rounded-full mr-2 flex-shrink-0">
-                        <i data-lucide="bot" class="h-4 w-4 text-white"></i>
-                    </div>
-                    <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 text-sm text-gray-700 prose prose-sm max-w-none">
-                        ${marked.parse(responseText)}
-                    </div>
-                `;
-                messagesEl.appendChild(aiMsgDiv);
-                
-                // Re-initialize icons for new elements
-                lucide.createIcons();
-
-            } catch (error) {
-                console.error("AI Error:", error);
-                document.getElementById('ai-loading').remove();
-                const errorDiv = document.createElement('div');
-                errorDiv.className = 'flex items-start';
-                errorDiv.innerHTML = `
-                    <div class="bg-red-100 p-3 rounded-lg text-sm text-red-600">
-                        Lo siento, hubo un error al procesar tu solicitud. Por favor intenta de nuevo.
-                    </div>
-                `;
-                messagesEl.appendChild(errorDiv);
-            } finally {
-                inputEl.disabled = false;
-                sendBtn.disabled = false;
-                inputEl.focus();
-                messagesEl.scrollTop = messagesEl.scrollHeight;
-            }
-        }
-    </script>
 
     <script>
         // Inicializar iconos
@@ -706,17 +614,15 @@
             menu.classList.toggle('hidden');
         });
 
-        // Lógica del Modal
+        // Lógica del Modal "Cotizar" (Pequeño)
         const modal = document.getElementById('quote-modal');
         const modalProductName = document.getElementById('modal-product-name');
         const modalWhatsappBtn = document.getElementById('modal-whatsapp-btn');
 
         function openModal(productName) {
             modalProductName.innerText = productName;
-            // Configurar enlace de WhatsApp dinámico para el producto
             const message = `Hola CMR, estoy interesado en cotizar: ${productName}`;
             modalWhatsappBtn.href = `https://wa.me/527291658980?text=${encodeURIComponent(message)}`;
-            
             modal.classList.remove('hidden');
         }
 
@@ -724,12 +630,46 @@
             modal.classList.add('hidden');
         }
 
-        // Cerrar modal al hacer click fuera
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
+        // Lógica del Modal "Detalle de Producto" (Grande)
+        const productModal = document.getElementById('product-detail-modal');
+        const detailTitle = document.getElementById('detail-title');
+        const detailDesc = document.getElementById('detail-desc');
+        const detailSpecs = document.getElementById('detail-specs');
+        const detailIconContainer = document.getElementById('detail-image-container');
+        const detailWhatsappBtn = document.getElementById('detail-whatsapp-btn');
+
+        function openProductDetail(title, iconName, description, specs) {
+            // Llenar datos
+            detailTitle.innerText = title;
+            detailDesc.innerText = description;
+            detailSpecs.innerText = specs;
+            
+            // Renderizar Icono (Simulando imagen)
+            // Nota: Si tuvieras imagenes reales, aqui pondrías: detailIconContainer.innerHTML = `<img src="${url}" class="w-full h-full object-contain">`;
+            detailIconContainer.innerHTML = `<i data-lucide="${iconName}" class="h-48 w-48 text-corporate"></i>`;
+            lucide.createIcons(); // Refrescar iconos para el nuevo contenido
+
+            // Configurar botón de WhatsApp
+            const message = `Hola CMR, vi el producto "${title}" en su catálogo web y me interesa una cotización.`;
+            detailWhatsappBtn.href = `https://wa.me/527291658980?text=${encodeURIComponent(message)}`;
+
+            // Mostrar modal
+            productModal.classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            productModal.classList.add('hidden');
+        }
+
+        // Cerrar modales al hacer click fuera
+        window.onclick = function(event) {
+            if (event.target == modal) {
                 closeModal();
             }
-        });
+            if (event.target == productModal) {
+                closeProductModal();
+            }
+        }
 
         // Función para enviar formulario del footer a WhatsApp
         function sendToWhatsapp() {
@@ -743,18 +683,9 @@
                 return;
             }
 
-            // Construir el mensaje formateado
             const text = `*Nueva Solicitud Web CMR*%0A---------------------------%0A*Nombre:* ${name}%0A*Teléfono:* ${phone}%0A*Interés:* ${product}%0A*Mensaje:* ${message}`;
-            
-            // Abrir API de WhatsApp
             const url = `https://wa.me/527291658980?text=${text}`;
             window.open(url, '_blank');
-        }
-
-        // Chat Widget Logic
-        function toggleChat() {
-            const chatWindow = document.getElementById('ai-chat-window');
-            chatWindow.classList.toggle('hidden');
         }
     </script>
 </body>
