@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LP y RIVAS | Equipos de Seguridad Personal</title>
+    <title>LP.RIVAS | Equipos de Seguridad Personal</title>
     <!-- Tailwind CSS para diseño rápido y moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Iconos Lucide (Versión estable) -->
@@ -29,18 +29,17 @@
         }
     </script>
     <style>
-        /* Suavizar el desplazamiento */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Ajuste para que el ancla no quede tapada por el navbar fijo */
-        .section-anchor {
-            scroll-margin-top: 6rem;
-        }
+        html { scroll-behavior: smooth; }
+        .section-anchor { scroll-margin-top: 6rem; }
         .hero-pattern {
             background-color: #003366;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2305407a' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
+        /* Custom scrollbar para menús largos */
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
 <body class="font-sans text-darkgray bg-gray-50">
@@ -51,8 +50,7 @@
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-2">
                     <a href="#" class="flex items-center space-x-2">
-                        <i data-lucide="shield" class="h-8 w-8 text-safety"></i>
-                        <span class="text-2xl font-bold tracking-wide">LP y RIVAS</span>
+                        <img src="logo.png" alt="Logo LP.RIVAS" class="h-10 w-auto brightness-0 invert drop-shadow-md">
                     </a>
                 </div>
                 
@@ -66,17 +64,18 @@
                             Catálogo
                             <i data-lucide="chevron-down" class="ml-1 h-4 w-4"></i>
                         </button>
-                        <!-- Dropdown Content -->
-                        <div class="absolute left-0 mt-0 w-56 bg-white rounded-md shadow-xl py-2 hidden group-hover:block transform transition-all duration-200 origin-top-left border-t-4 border-safety">
-                            <a href="#chalecos" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center">
-                                <i data-lucide="layers" class="h-4 w-4 mr-2 text-safety"></i> Chalecos Industriales
-                            </a>
-                            <a href="#ropa-trabajo" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center">
-                                <i data-lucide="hard-hat" class="h-4 w-4 mr-2 text-safety"></i> Ropa de Trabajo
-                            </a>
-                            <a href="#servicios" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center">
-                                <i data-lucide="scissors" class="h-4 w-4 mr-2 text-safety"></i> Personalización
-                            </a>
+                        <div class="absolute left-0 mt-0 w-72 bg-white rounded-md shadow-xl py-2 hidden group-hover:block transform transition-all duration-200 origin-top-left border-t-4 border-safety max-h-[80vh] overflow-y-auto custom-scroll">
+                            <a href="#overoles" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="user" class="h-4 w-4 mr-2 text-safety"></i> Overoles</a>
+                            <a href="#camisolas" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="shirt" class="h-4 w-4 mr-2 text-safety"></i> Camisolas</a>
+                            <a href="#chamarras-alta-visibilidad" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="sun" class="h-4 w-4 mr-2 text-safety"></i> Chamarras Alta Visibilidad</a>
+                            <a href="#chamarras" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="cloud-rain" class="h-4 w-4 mr-2 text-safety"></i> Chamarras</a>
+                            <a href="#chalecos-alta-visibilidad" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="layers" class="h-4 w-4 mr-2 text-safety"></i> Chalecos Alta Visibilidad</a>
+                            <a href="#chalecos-ejecutivos" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="briefcase" class="h-4 w-4 mr-2 text-safety"></i> Chalecos Ejecutivos</a>
+                            <a href="#batas-laboratorio" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="activity" class="h-4 w-4 mr-2 text-safety"></i> Batas de Laboratorio</a>
+                            <a href="#camisas-gabardina" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="shirt" class="h-4 w-4 mr-2 text-safety"></i> Camisas de Gabardina</a>
+                            <a href="#camisas-oxford" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="shirt" class="h-4 w-4 mr-2 text-safety"></i> Camisas Oxford</a>
+                            <a href="#filipinas" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="chef-hat" class="h-4 w-4 mr-2 text-safety"></i> Filipinas</a>
+                            <a href="#uniformes-guardias" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-corporate flex items-center"><i data-lucide="shield-check" class="h-4 w-4 mr-2 text-safety"></i> Uniformes Guardias</a>
                         </div>
                     </div>
 
@@ -94,16 +93,21 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-blue-900 pb-4 shadow-inner">
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-900 pb-4 shadow-inner max-h-screen overflow-y-auto">
             <a href="#inicio" class="block py-3 px-6 text-sm hover:bg-blue-800 border-b border-blue-800">Inicio</a>
-            <div class="bg-blue-950/50">
-                <p class="px-6 py-2 text-xs text-blue-300 font-bold uppercase tracking-wider">Catálogo</p>
-                <a href="#chalecos" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800 flex items-center">
-                    <i data-lucide="layers" class="h-4 w-4 mr-2"></i> Chalecos
-                </a>
-                <a href="#ropa-trabajo" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800 flex items-center">
-                    <i data-lucide="hard-hat" class="h-4 w-4 mr-2"></i> Ropa de Trabajo
-                </a>
+            <div class="bg-blue-950/50 py-2">
+                <p class="px-6 py-2 text-xs text-blue-300 font-bold uppercase tracking-wider">Categorías</p>
+                <a href="#overoles" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Overoles</a>
+                <a href="#camisolas" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Camisolas</a>
+                <a href="#chamarras-alta-visibilidad" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Chamarras Alta Visibilidad</a>
+                <a href="#chamarras" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Chamarras</a>
+                <a href="#chalecos-alta-visibilidad" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Chalecos Alta Visibilidad</a>
+                <a href="#chalecos-ejecutivos" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Chalecos Ejecutivos</a>
+                <a href="#batas-laboratorio" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Batas de Laboratorio</a>
+                <a href="#camisas-gabardina" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Camisas de Gabardina</a>
+                <a href="#camisas-oxford" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Camisas Oxford</a>
+                <a href="#filipinas" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Filipinas</a>
+                <a href="#uniformes-guardias" class="block py-2 px-8 text-sm text-gray-300 hover:text-white hover:bg-blue-800">Uniformes Guardias</a>
             </div>
             <a href="#servicios" class="block py-3 px-6 text-sm hover:bg-blue-800 border-b border-blue-800">Servicios</a>
             <a href="#contacto" class="block py-3 px-6 text-sm text-safety font-bold bg-blue-950 mt-2">Contáctanos</a>
@@ -122,10 +126,10 @@
                     Calidad, resistencia y seguridad para tu equipo operativo. Confección de uniformes de alto rendimiento.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#chalecos" class="bg-safety text-white px-8 py-3 rounded-md font-bold text-center hover:bg-orange-600 transition-shadow shadow-lg flex items-center justify-center gap-2">
+                    <a href="#overoles" class="bg-safety text-white px-8 py-3 rounded-md font-bold text-center hover:bg-orange-600 transition-shadow shadow-lg flex items-center justify-center gap-2">
                         Ver Catálogo <i data-lucide="arrow-down" class="h-4 w-4"></i>
                     </a>
-                    <a href="https://wa.me/527291658980?text=Hola%20LP%20y%20RIVAS,%20me%20gustaría%20más%20información%20sobre%20sus%20equipos." target="_blank" class="bg-green-600 text-white px-8 py-3 rounded-md font-bold text-center hover:bg-green-700 transition-colors flex items-center justify-center gap-2">
+                    <a href="https://wa.me/525625029019?text=Hola%20LP.RIVAS,%20me%20gustaría%20más%20información%20sobre%20sus%20equipos." target="_blank" class="bg-green-600 text-white px-8 py-3 rounded-md font-bold text-center hover:bg-green-700 transition-colors flex items-center justify-center gap-2">
                         <i data-lucide="message-circle" class="h-4 w-4"></i> WhatsApp
                     </a>
                 </div>
@@ -133,40 +137,19 @@
             
             <!-- SECCIÓN DE VIDEO PRINCIPAL -->
             <div class="md:w-1/2 flex justify-center relative">
-                <!-- Marco decorativo del video -->
                 <div class="w-full max-w-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 shadow-2xl relative overflow-hidden group">
-                    
-                    <!-- Etiqueta de "En Acción" -->
                     <div class="absolute top-6 right-6 z-10 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center animate-pulse shadow-lg pointer-events-none">
                         <span class="w-2 h-2 bg-white rounded-full mr-2"></span> EN VIVO
                     </div>
-
-                    <!-- Video Player (YouTube Short Embed) -->
                     <div class="relative rounded-lg overflow-hidden aspect-video bg-gray-900 group">
-                        <iframe 
-                            class="absolute inset-0 w-full h-full scale-110"
-                            src="https://www.youtube.com/embed/9dhKwFsdpWU?autoplay=1&mute=1&loop=1&playlist=9dhKwFsdpWU&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1" 
-                            title="Video Promocional LP y RIVAS"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen
-                        ></iframe>
-                        
-                        <!-- Overlay transparente para evitar clicks accidentales y mantener estilo "fondo" (Opcional, quitar si quieres que pausen el video) -->
+                        <iframe class="absolute inset-0 w-full h-full scale-110" src="https://www.youtube.com/embed/9dhKwFsdpWU?autoplay=1&mute=1&loop=1&playlist=9dhKwFsdpWU&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1" title="Video Promocional LP.RIVAS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <div class="absolute inset-0 bg-transparent"></div>
-
-                        <!-- Overlay gradiente para mejorar legibilidad si se pone texto encima -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
-                        
-                        <!-- Etiqueta inferior -->
                         <div class="absolute bottom-4 left-4 text-white text-xs font-medium flex items-center gap-2 pointer-events-none">
                             <i data-lucide="play-circle" class="h-4 w-4"></i> Video Promocional
                         </div>
                     </div>
                 </div>
-                
-                <!-- Elemento decorativo detrás del video -->
                 <div class="absolute -z-10 top-10 -right-4 w-24 h-24 bg-safety/20 rounded-full blur-xl"></div>
                 <div class="absolute -z-10 -bottom-4 -left-4 w-32 h-32 bg-corporate/40 rounded-full blur-xl"></div>
             </div>
@@ -178,7 +161,7 @@
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold text-corporate mb-6">Nuestra Misión</h2>
             <p class="text-lg text-gray-600 leading-relaxed">
-                En <strong>LP y RIVAS</strong> nos especializamos en la confección de uniformes y equipos de seguridad de alto rendimiento. Ofrecemos soluciones personalizadas, bordados y cambios de tela al gusto, garantizando la protección y comodidad de su personal operativo.
+                En <strong>LP.RIVAS</strong> nos especializamos en la confección de uniformes y equipos de seguridad de alto rendimiento. Ofrecemos soluciones personalizadas, bordados y cambios de tela al gusto, garantizando la protección y comodidad de su personal operativo.
             </p>
             <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-4">
@@ -206,7 +189,7 @@
         </div>
     </section>
 
-    <!-- CATÁLOGO -->
+    <!-- CATÁLOGO (GENERADO DINÁMICAMENTE) -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -215,339 +198,73 @@
                 <p class="mt-4 text-gray-600">Explora nuestras líneas de productos especializados.</p>
             </div>
 
-            <!-- Categoría 1: Chalecos -->
-            <div id="chalecos" class="section-anchor mb-16">
-                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center">
-                    <i data-lucide="layers" class="mr-2 h-6 w-6 text-gray-400"></i>
-                    Chalecos Industriales
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Producto 1 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <!-- Imagen Interactiva -->
-                        <div onclick="openProductDetail('Chaleco Brigadista Pro', 'https://i.ibb.co/5g1Z9bns/Chalecos-1.jpg', 'Cierre reforzado y cintas reflejantes de alta luminosidad.', '4 Compartimentos | Tallas CH-EG')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/5g1Z9bns/Chalecos-1.jpg" alt="Chaleco Brigadista Pro" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <!-- Overlay Hover -->
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Brigadista Pro</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Cierre reforzado y cintas reflejantes de alta luminosidad.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">4 Compartimentos | Tallas CH-EG</p>
-                            </div>
-                            <button onclick="openModal('Chaleco Brigadista Pro')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 2 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Chaleco Ejecutivo Premium', 'https://i.ibb.co/LjdJCMK/Chalecos-2.jpg', 'Funcionalidad operativa con estética profesional.', '9 Compartimentos | Alta Capacidad')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/LjdJCMK/Chalecos-2.jpg" alt="Chaleco Ejecutivo Premium" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Ejecutivo Premium</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Funcionalidad operativa con estética profesional.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">9 Compartimentos | Alta Capacidad</p>
-                            </div>
-                            <button onclick="openModal('Chaleco Ejecutivo Premium')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 3 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                         <div onclick="openProductDetail('Chaleco Tipo Paño', 'https://i.ibb.co/fVZ1QmJC/Chalecos-3.jpg', 'Confección robusta ideal para climas frescos.', '6 Compartimentos | Cierre Central')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/fVZ1QmJC/Chalecos-3.jpg" alt="Chaleco Tipo Paño" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Tipo Paño</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Confección robusta ideal para climas frescos.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">6 Compartimentos | Cierre Central</p>
-                            </div>
-                            <button onclick="openModal('Chaleco Tipo Paño')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 4 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Chaleco con Reflejantes', 'https://i.ibb.co/B8t2BFV/Chalecos-4.jpg', 'Chaleco de seguridad con alta visibilidad y ajuste.', '7 Compartimentos | Tallas CH-EG')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/B8t2BFV/Chalecos-4.jpg" alt="Chaleco con Reflejantes" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Con Reflejantes</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Chaleco de seguridad con alta visibilidad y ajuste.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">7 Compartimentos | Tallas CH-EG</p>
-                            </div>
-                            <button onclick="openModal('Chaleco con Reflejantes')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 5 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Chaleco Reflejante Mochila', 'https://i.ibb.co/ZRVTndmR/Chalecos-5.jpg', 'Diseño ergonómico que distribuye el peso.', '5 Compartimentos | Ajuste Cómodo')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/ZRVTndmR/Chalecos-5.jpg" alt="Chaleco Reflejante Mochila" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Reflejante Mochila</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Diseño ergonómico que distribuye el peso.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">5 Compartimentos | Ajuste Cómodo</p>
-                            </div>
-                            <button onclick="openModal('Chaleco Reflejante Mochila')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 6 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Chaleco Supervisor', 'https://i.ibb.co/cSyR7qRx/Chalecos-6.jpg', 'Chaleco para supervisores con múltiples bolsillos.', '8 Compartimentos | Uso Rudo')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/cSyR7qRx/Chalecos-6.jpg" alt="Chaleco Supervisor" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Supervisor</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Chaleco para supervisores con múltiples bolsillos.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">8 Compartimentos | Uso Rudo</p>
-                            </div>
-                            <button onclick="openModal('Chaleco Supervisor')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 7 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Chaleco de Malla', 'https://i.ibb.co/Kp1HtNbq/Chalecos-7.jpg', 'Material transpirable ideal para trabajo en exteriores.', '4 Compartimentos | Alta Frescura')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/Kp1HtNbq/Chalecos-7.jpg" alt="Chaleco de Malla" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">De Malla</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Material transpirable ideal para trabajo en exteriores.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">4 Compartimentos | Alta Frescura</p>
-                            </div>
-                            <button onclick="openModal('Chaleco de Malla')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 8 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Chaleco Vialidad', 'https://i.ibb.co/VWvK562N/Chalecos-8.jpg', 'Máxima visibilidad nocturna y protección en vialidades.', '3 Compartimentos | Cintas Reflejantes Extra')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/VWvK562N/Chalecos-8.jpg" alt="Chaleco Vialidad" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Vialidad</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Máxima visibilidad nocturna y protección en vialidades.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">3 Compartimentos | Reflejantes Extra</p>
-                            </div>
-                            <button onclick="openModal('Chaleco Vialidad')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 9 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Chaleco Industrial Pesado', 'https://i.ibb.co/m5c0vkZS/Chalecos-9.jpg', 'Resistencia superior al desgarre para trabajos pesados.', '6 Compartimentos | Tela Reforzada')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/m5c0vkZS/Chalecos-9.jpg" alt="Chaleco Industrial Pesado" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Industrial Pesado</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Resistencia superior al desgarre para trabajos pesados.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">6 Compartimentos | Tela Reforzada</p>
-                            </div>
-                            <button onclick="openModal('Chaleco Industrial Pesado')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 10 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Chaleco Multipropósito', 'https://i.ibb.co/RLCCBBq/Chalecos-10.jpg', 'Versátil y cómodo para cualquier área de la industria.', '5 Compartimentos | Cierre Frontal')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <img src="https://i.ibb.co/RLCCBBq/Chalecos-10.jpg" alt="Chaleco Multipropósito" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Multipropósito</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Versátil y cómodo para cualquier área de la industria.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">5 Compartimentos | Cierre Frontal</p>
-                            </div>
-                            <button onclick="openModal('Chaleco Multipropósito')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
+            <!-- 1. OVEROLES -->
+            <div id="overoles" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="user" class="mr-2 h-6 w-6 text-gray-400"></i> Overoles</h3>
+                <div id="grid-overoles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
             </div>
 
-            <!-- Categoría 2: Ropa Pesada -->
-            <div id="ropa-trabajo" class="section-anchor mb-16">
-                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center">
-                    <i data-lucide="hard-hat" class="mr-2 h-6 w-6 text-gray-400"></i>
-                    Ropa de Trabajo
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Producto 5 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                         <div onclick="openProductDetail('Camisola Industrial', 'shirt', 'Mezclilla uso rudo 14oz o ligera 10oz.', 'Azul Marino/Claro | Durabilidad')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <i data-lucide="shirt" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Camisola Industrial</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Mezclilla uso rudo 14oz o ligera 10oz.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">Azul Marino/Claro | Durabilidad</p>
-                            </div>
-                            <button onclick="openModal('Camisola Industrial')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                     <!-- Producto 6 -->
-                     <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Bata de Taller', 'activity', 'Corte amplio para movilidad en laboratorio.', '3 Compartimentos | Tallas CH-EG')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <i data-lucide="activity" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Bata de Taller</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Corte amplio para movilidad en laboratorio.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">3 Compartimentos | Tallas CH-EG</p>
-                            </div>
-                            <button onclick="openModal('Bata de Labor y Taller')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 7 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                        <div onclick="openProductDetail('Pantalón Impermeable', 'umbrella', 'Blindaje contra líquidos con cintas reflejantes.', '2 Bolsillos | Alta Visibilidad')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <i data-lucide="umbrella" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Pantalón Impermeable</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Blindaje contra líquidos con cintas reflejantes.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">2 Bolsillos | Alta Visibilidad</p>
-                            </div>
-                            <button onclick="openModal('Pantalón Impermeable')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Producto 8 -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                         <div onclick="openProductDetail('Pantalón Moto', 'bike', 'Corte ergonómico resistente a la fricción.', 'Refuerzo en zonas clave')" 
-                             class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
-                            <i data-lucide="bike" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>
-                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                                <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-corporate text-lg mb-2">Pantalón Moto</h4>
-                            <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">Corte ergonómico resistente a la fricción.</p>
-                            <div class="border-t border-gray-100 pt-4">
-                                <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
-                                <p class="text-xs text-gray-500">Refuerzo en zonas clave</p>
-                            </div>
-                            <button onclick="openModal('Pantalón Motociclista')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
-                                Cotizar
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
+            <!-- 2. CAMISOLAS -->
+            <div id="camisolas" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="shirt" class="mr-2 h-6 w-6 text-gray-400"></i> Camisolas</h3>
+                <div id="grid-camisolas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
             </div>
 
-             <!-- Categoría 3: Personalización -->
+            <!-- 3. CHAMARRAS DE ALTA VISIBILIDAD -->
+            <div id="chamarras-alta-visibilidad" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="sun" class="mr-2 h-6 w-6 text-gray-400"></i> Chamarras de Alta Visibilidad</h3>
+                <div id="grid-chamarras-alta" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+            <!-- 4. CHAMARRAS -->
+            <div id="chamarras" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="cloud-rain" class="mr-2 h-6 w-6 text-gray-400"></i> Chamarras</h3>
+                <div id="grid-chamarras" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+            <!-- 5. CHALECOS ALTA VISIBILIDAD -->
+            <div id="chalecos-alta-visibilidad" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="layers" class="mr-2 h-6 w-6 text-gray-400"></i> Chalecos Alta Visibilidad</h3>
+                <div id="grid-chalecos-alta" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+            <!-- 6. CHALECOS EJECUTIVOS -->
+            <div id="chalecos-ejecutivos" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="briefcase" class="mr-2 h-6 w-6 text-gray-400"></i> Chalecos Ejecutivos</h3>
+                <div id="grid-chalecos-ejec" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+            <!-- 7. BATAS DE LABORATORIO -->
+            <div id="batas-laboratorio" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="activity" class="mr-2 h-6 w-6 text-gray-400"></i> Batas de Laboratorio</h3>
+                <div id="grid-batas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+            <!-- 8. CAMISAS DE GABARDINA -->
+            <div id="camisas-gabardina" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="shirt" class="mr-2 h-6 w-6 text-gray-400"></i> Camisas de Gabardina</h3>
+                <div id="grid-camisas-gabardina" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+            <!-- 9. CAMISAS OXFORD -->
+            <div id="camisas-oxford" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="shirt" class="mr-2 h-6 w-6 text-gray-400"></i> Camisas Oxford</h3>
+                <div id="grid-camisas-oxford" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+            <!-- 10. FILIPINAS -->
+            <div id="filipinas" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="chef-hat" class="mr-2 h-6 w-6 text-gray-400"></i> Filipinas</h3>
+                <div id="grid-filipinas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+            <!-- 11. UNIFORMES GUARDIAS DE SEGURIDAD -->
+            <div id="uniformes-guardias" class="section-anchor mb-16">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 border-l-4 border-safety pl-4 flex items-center"><i data-lucide="shield-check" class="mr-2 h-6 w-6 text-gray-400"></i> Uniformes Guardias de Seguridad</h3>
+                <div id="grid-uniformes-guardias" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><div class="col-span-4 text-center py-10 text-gray-400">Cargando...</div></div>
+            </div>
+
+             <!-- SERVICIOS DE PERSONALIZACIÓN -->
              <div id="servicios" class="section-anchor bg-corporate rounded-xl p-8 text-white relative overflow-hidden">
                 <div class="absolute top-0 right-0 -mr-16 -mt-16 bg-white opacity-10 rounded-full w-64 h-64"></div>
                 <div class="relative z-10 flex flex-col md:flex-row items-center justify-between">
@@ -579,41 +296,20 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                     <h2 class="text-3xl font-bold text-corporate mb-6">Contáctanos</h2>
-                    <p class="text-gray-600 mb-8">
-                        ¿Listo para equipar a su personal? Realizamos pedidos por mayoreo y envíos. Llámenos para una cotización inmediata.
-                    </p>
-                    
+                    <p class="text-gray-600 mb-8">¿Listo para equipar a su personal? Realizamos pedidos por mayoreo y envíos. Llámenos para una cotización inmediata.</p>
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4 text-corporate">
-                                <i data-lucide="phone" class="h-6 w-6"></i>
-                            </div>
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 text-corporate"><i data-lucide="phone" class="h-6 w-6"></i></div>
                             <div>
                                 <h3 class="font-bold text-lg">WhatsApp / Teléfono</h3>
-                                <p class="text-safety font-bold text-2xl">729 165 8980</p>
-                                <p class="text-sm text-gray-500">Disponible Lunes a Viernes 9am - 6pm</p>
+                                <p class="text-safety font-bold text-2xl">5625029019</p>
                             </div>
                         </div>
-                        
                         <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4 text-corporate">
-                                <i data-lucide="mail" class="h-6 w-6"></i>
-                            </div>
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 text-corporate"><i data-lucide="mail" class="h-6 w-6"></i></div>
                             <div>
                                 <h3 class="font-bold text-lg">Correo Electrónico</h3>
-                                <p class="text-gray-700">ventas@lpyrivas.com</p>
-                                <p class="text-xs text-gray-400">(Correo demostrativo)</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4 text-corporate">
-                                <i data-lucide="map-pin" class="h-6 w-6"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">Ubicación</h3>
-                                <p class="text-gray-700">Toluca, Estado de México</p>
-                                <p class="text-sm text-gray-500">Envíos a toda la república.</p>
+                                <p class="text-gray-700">lp.rivas309@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -622,28 +318,26 @@
                 <div class="bg-gray-50 p-8 rounded-xl shadow-inner">
                     <h3 class="text-xl font-bold text-corporate mb-4">Enviar Mensaje a WhatsApp</h3>
                     <form onsubmit="event.preventDefault(); sendToWhatsapp();" class="space-y-4">
+                        <div><input type="text" id="form-name" class="w-full px-4 py-2 border rounded outline-none" placeholder="Su nombre o empresa" required></div>
+                        <div><input type="tel" id="form-phone" class="w-full px-4 py-2 border rounded outline-none" placeholder="5625029019" required></div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                            <input type="text" id="form-name" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-corporate focus:border-transparent outline-none" placeholder="Su nombre o empresa" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                            <input type="tel" id="form-phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-corporate focus:border-transparent outline-none" placeholder="729 165 8980" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Producto de Interés</label>
-                            <select id="contact-product" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-corporate focus:border-transparent outline-none bg-white">
+                            <select id="contact-product" class="w-full px-4 py-2 border rounded outline-none bg-white">
                                 <option>Información General</option>
-                                <option>Chalecos Industriales</option>
-                                <option>Ropa de Trabajo</option>
-                                <option>Uniformes Personalizados</option>
+                                <option>Overoles</option>
+                                <option>Camisolas</option>
+                                <option>Chamarras Alta Visibilidad</option>
+                                <option>Chamarras</option>
+                                <option>Chalecos Alta Visibilidad</option>
+                                <option>Chalecos Ejecutivos</option>
+                                <option>Batas de Laboratorio</option>
+                                <option>Camisas de Gabardina</option>
+                                <option>Camisas Oxford</option>
+                                <option>Filipinas</option>
+                                <option>Uniformes Guardias de Seguridad</option>
                             </select>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                            <textarea id="form-message" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-corporate focus:border-transparent outline-none h-32" placeholder="¿Cuántas piezas necesita? ¿Requiere bordado?"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-green-600 text-white py-3 rounded font-bold hover:bg-green-700 transition-colors shadow-lg flex items-center justify-center gap-2">
+                        <div><textarea id="form-message" class="w-full px-4 py-2 border rounded outline-none h-32" placeholder="¿Cuántas piezas necesita?"></textarea></div>
+                        <button type="submit" class="w-full bg-green-600 text-white py-3 rounded font-bold hover:bg-green-700 flex items-center justify-center gap-2">
                             <i data-lucide="message-circle" class="h-5 w-5"></i> Enviar Solicitud por WhatsApp
                         </button>
                     </form>
@@ -656,170 +350,221 @@
     <footer class="bg-darkgray text-white py-8 border-t-4 border-safety">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <div class="mb-4 md:mb-0">
-                <span class="text-2xl font-bold tracking-wide">LP y RIVAS</span>
+                <img src="image_a9072b.png" alt="Logo LP.RIVAS" class="h-12 w-auto brightness-0 invert mb-2 opacity-90">
                 <p class="text-gray-400 text-sm">Equipos de Seguridad Personal</p>
             </div>
             <div class="text-center md:text-right">
-                <p class="text-sm text-gray-400">&copy; 2026 LP y RIVAS Seguridad. Todos los derechos reservados.</p>
-                <p class="text-xs text-gray-600 mt-1">Diseño web basado en catálogo PDF.</p>
+                <p class="text-sm text-gray-400">&copy; 2026 LP.RIVAS Seguridad.</p>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL SIMPLE PARA "COTIZAR" (Formulario rápido) -->
+    <!-- MODALES (Ocultos) -->
+    <!-- Modal Simple -->
     <div id="quote-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg max-w-md w-full p-6 relative shadow-2xl transform transition-all">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-                <i data-lucide="x" class="h-6 w-6"></i>
-            </button>
+        <div class="bg-white rounded-lg max-w-md w-full p-6 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i data-lucide="x" class="h-6 w-6"></i></button>
             <div class="text-center mb-6">
-                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-corporate">
-                    <i data-lucide="message-circle" class="h-8 w-8"></i>
-                </div>
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-corporate"><i data-lucide="message-circle" class="h-8 w-8"></i></div>
                 <h3 class="text-xl font-bold text-corporate">Cotizar Producto</h3>
                 <p class="text-sm text-gray-500 mt-2">Está interesado en: <br> <span id="modal-product-name" class="font-bold text-safety text-lg">Producto</span></p>
             </div>
-            
             <div class="space-y-3">
-                <a id="modal-whatsapp-btn" href="#" target="_blank" class="block w-full bg-green-600 text-white py-3 rounded text-center font-bold hover:bg-green-700 transition-colors flex items-center justify-center gap-2">
-                    <i data-lucide="message-circle" class="h-4 w-4"></i> Cotizar por WhatsApp
-                </a>
-                <button onclick="closeModal(); document.getElementById('contact-product').value = document.getElementById('modal-product-name').innerText; window.location.href='#contacto';" class="block w-full border-2 border-corporate text-corporate py-3 rounded text-center font-bold hover:bg-blue-50 transition-colors">
-                    Llenar Formulario
-                </button>
+                <a id="modal-whatsapp-btn" href="#" target="_blank" class="block w-full bg-green-600 text-white py-3 rounded text-center font-bold flex items-center justify-center gap-2"><i data-lucide="message-circle" class="h-4 w-4"></i> Cotizar por WhatsApp</a>
+                <button onclick="closeModal(); document.getElementById('contact-product').value = document.getElementById('modal-product-name').innerText; window.location.href='#contacto';" class="block w-full border-2 border-corporate text-corporate py-3 rounded font-bold">Llenar Formulario</button>
             </div>
-            <p class="text-xs text-center text-gray-400 mt-4">Nos pondremos en contacto a la brevedad.</p>
         </div>
     </div>
 
-    <!-- MODAL DE DETALLE DE PRODUCTO (NUEVO) -->
+    <!-- Modal Detalle Grande -->
     <div id="product-detail-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-xl max-w-4xl w-full relative shadow-2xl flex flex-col md:flex-row overflow-hidden max-h-[90vh]">
-            <!-- Botón Cerrar -->
-            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 bg-white/50 hover:bg-white rounded-full p-1 text-gray-600 hover:text-red-500 transition-colors">
-                <i data-lucide="x" class="h-6 w-6"></i>
-            </button>
-
-            <!-- Imagen Grande (Izquierda) -->
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 bg-white/50 hover:bg-white rounded-full p-1 text-gray-600 transition-colors"><i data-lucide="x" class="h-6 w-6"></i></button>
             <div class="md:w-1/2 bg-gray-100 flex items-center justify-center p-12 relative">
-                 <div id="detail-image-container" class="text-corporate">
-                     <!-- El icono o imagen se inyectará aquí -->
-                     <i id="detail-icon" data-lucide="package" class="h-48 w-48"></i>
-                 </div>
+                 <div id="detail-image-container" class="text-corporate"></div>
             </div>
-
-            <!-- Detalles (Derecha) -->
             <div class="md:w-1/2 p-8 flex flex-col justify-center overflow-y-auto">
                 <div class="mb-auto">
                     <span class="bg-blue-100 text-corporate text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block">Detalles del Producto</span>
-                    <h2 id="detail-title" class="text-3xl font-bold text-corporate mb-4">Nombre del Producto</h2>
-                    <p id="detail-desc" class="text-gray-600 text-lg mb-6 leading-relaxed">Descripción detallada del producto...</p>
-                    
+                    <h2 id="detail-title" class="text-3xl font-bold text-corporate mb-4">Título</h2>
+                    <p id="detail-desc" class="text-gray-600 text-lg mb-6 leading-relaxed">Descripción</p>
                     <div class="bg-gray-50 p-4 rounded-lg border border-gray-100 mb-8">
-                        <h4 class="text-sm font-bold text-safety uppercase mb-2 flex items-center">
-                            <i data-lucide="info" class="h-4 w-4 mr-2"></i> Especificaciones
-                        </h4>
-                        <p id="detail-specs" class="text-gray-700 font-medium">Especificaciones...</p>
+                        <h4 class="text-sm font-bold text-safety uppercase mb-2 flex items-center"><i data-lucide="info" class="h-4 w-4 mr-2"></i> Especificaciones</h4>
+                        <p id="detail-specs" class="text-gray-700 font-medium">Specs...</p>
                     </div>
                 </div>
-
                 <div class="space-y-3 pt-4 border-t border-gray-100">
-                    <a id="detail-whatsapp-btn" href="#" target="_blank" class="block w-full bg-green-600 text-white py-4 rounded-lg text-center font-bold text-lg hover:bg-green-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                        <i data-lucide="message-circle" class="h-6 w-6"></i> Cotizar Ahora por WhatsApp
-                    </a>
-                    <p class="text-center text-xs text-gray-400">Respuesta inmediata en horario laboral.</p>
+                    <a id="detail-whatsapp-btn" href="#" target="_blank" class="block w-full bg-green-600 text-white py-4 rounded-lg text-center font-bold text-lg flex items-center justify-center gap-2"><i data-lucide="message-circle" class="h-6 w-6"></i> Cotizar Ahora por WhatsApp</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- SCRIPTS LÓGICOS -->
     <script>
-        // Inicializar iconos
-        lucide.createIcons();
+        // --- 1. DATOS POR DEFECTO ---
+        // Se usarán si no tienes el archivo .txt creado o si abres la web sin servidor local.
+        
+        const DEFAULT_CHALECOS_ALTA = [
+            { title: "Brigadista Pro", img: "https://i.ibb.co/5g1Z9bns/Chalecos-1.jpg", desc: "Cierre reforzado y cintas reflejantes de alta luminosidad.", specs: "4 Compartimentos | Tallas CH-EG" },
+            { title: "Con Reflejantes", img: "https://i.ibb.co/B8t2BFV/Chalecos-4.jpg", desc: "Chaleco de seguridad con alta visibilidad y ajuste.", specs: "7 Compartimentos | Tallas CH-EG" },
+            { title: "Reflejante Mochila", img: "https://i.ibb.co/ZRVTndmR/Chalecos-5.jpg", desc: "Diseño ergonómico que distribuye el peso.", specs: "5 Compartimentos | Ajuste Cómodo" },
+            { title: "De Malla", img: "https://i.ibb.co/Kp1HtNbq/Chalecos-7.jpg", desc: "Material transpirable ideal para trabajo en exteriores.", specs: "4 Compartimentos | Alta Frescura" },
+            { title: "Vialidad", img: "https://i.ibb.co/VWvK562N/Chalecos-8.jpg", desc: "Máxima visibilidad nocturna y protección en vialidades.", specs: "3 Compartimentos | Reflejantes Extra" }
+        ];
 
-        // Menú móvil
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
+        const DEFAULT_CHALECOS_EJEC = [
+            { title: "Ejecutivo Premium", img: "https://i.ibb.co/LjdJCMK/Chalecos-2.jpg", desc: "Funcionalidad operativa con estética profesional.", specs: "9 Compartimentos | Alta Capacidad" },
+            { title: "Tipo Paño", img: "https://i.ibb.co/fVZ1QmJC/Chalecos-3.jpg", desc: "Confección robusta ideal para climas frescos.", specs: "6 Compartimentos | Cierre Central" },
+            { title: "Supervisor", img: "https://i.ibb.co/cSyR7qRx/Chalecos-6.jpg", desc: "Chaleco para supervisores con múltiples bolsillos.", specs: "8 Compartimentos | Uso Rudo" },
+            { title: "Industrial Pesado", img: "https://i.ibb.co/m5c0vkZS/Chalecos-9.jpg", desc: "Resistencia superior al desgarre para trabajos pesados.", specs: "6 Compartimentos | Tela Reforzada" },
+            { title: "Multipropósito", img: "https://i.ibb.co/RLCCBBq/Chalecos-10.jpg", desc: "Versátil y cómodo para cualquier área de la industria.", specs: "5 Compartimentos | Cierre Frontal" }
+        ];
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        // Resto de categorías (Iconos genéricos como placeholder)
+        const DEFAULT_OVEROLES = [{ title: "Overol Industrial", img: "user", desc: "Overol de trabajo pesado.", specs: "Bolsillos reforzados", isIcon: true }];
+        const DEFAULT_CAMISOLAS = [{ title: "Camisola Uso Rudo", img: "shirt", desc: "Mezclilla de 14oz o ligera.", specs: "Durabilidad Extrema", isIcon: true }];
+        const DEFAULT_CHAMARRAS_ALTA = [{ title: "Chamarra Alta Visibilidad", img: "sun", desc: "Protección térmica con reflejantes.", specs: "Impermeable | Tallas M-XXL", isIcon: true }];
+        const DEFAULT_CHAMARRAS = [{ title: "Chamarra Ejecutiva", img: "cloud-rain", desc: "Chamarra para bajas temperaturas.", specs: "Forro térmico interior", isIcon: true }];
+        const DEFAULT_BATAS = [{ title: "Bata de Laboratorio", img: "activity", desc: "Corte clínico y amplio.", specs: "3 Compartimentos | Tela Gabardina", isIcon: true }];
+        const DEFAULT_CAMISAS_GAB = [{ title: "Camisa Gabardina", img: "shirt", desc: "Camisa de trabajo corporativo.", specs: "Manga Corta/Larga", isIcon: true }];
+        const DEFAULT_CAMISAS_OX = [{ title: "Camisa Oxford", img: "shirt", desc: "Estilo elegante y ejecutivo.", specs: "Colores empresariales", isIcon: true }];
+        const DEFAULT_FILIPINAS = [{ title: "Filipina Chef/Clínica", img: "chef-hat", desc: "Confección cómoda y transpirable.", specs: "Cierre de botones", isIcon: true }];
+        const DEFAULT_UNIFORMES_G = [{ title: "Uniforme Guardia", img: "shield-check", desc: "Pantalón y camisa táctica.", specs: "Resistente a desgarres", isIcon: true }];
+
+        // --- 2. FUNCIÓN PARA GENERAR EL HTML DEL PRODUCTO ---
+        function generateProductHTML(prod) {
+            const isIcon = prod.isIcon || !prod.img.startsWith('http');
+            const mediaHTML = isIcon 
+                ? `<i data-lucide="${prod.img}" class="h-16 w-16 text-gray-400 group-hover/image:scale-110 transition-transform duration-300"></i>`
+                : `<img src="${prod.img}" alt="${prod.title}" class="w-full h-full object-cover group-hover/image:scale-110 transition-transform duration-300">`;
+
+            return `
+            <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group flex flex-col">
+                <div onclick="openProductDetail('${prod.title}', '${prod.img}', '${prod.desc}', '${prod.specs}')" 
+                     class="h-48 bg-gray-200 flex items-center justify-center relative overflow-hidden cursor-pointer group/image">
+                    ${mediaHTML}
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover/image:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="h-8 w-8 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h4 class="font-bold text-corporate text-lg mb-2">${prod.title}</h4>
+                    <p class="text-sm text-gray-600 mb-4 h-12 overflow-hidden">${prod.desc}</p>
+                    <div class="border-t border-gray-100 pt-4 mt-auto">
+                        <p class="text-xs text-safety font-bold uppercase mb-1">Especificaciones</p>
+                        <p class="text-xs text-gray-500">${prod.specs}</p>
+                    </div>
+                    <button onclick="openModal('${prod.title}')" class="mt-4 w-full bg-corporate text-white py-2 rounded text-sm font-semibold hover:bg-blue-800 transition-colors">
+                        Cotizar
+                    </button>
+                </div>
+            </div>`;
+        }
+
+        // --- 3. LECTOR DE ARCHIVOS .TXT ---
+        async function loadProductsFromTxt(fileName, containerId, defaultData) {
+            const container = document.getElementById(containerId);
+            try {
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error("Archivo no encontrado o bloqueado");
+                
+                const text = await response.text();
+                const lines = text.trim().split('\n');
+                let htmlContent = '';
+
+                lines.forEach(line => {
+                    const parts = line.split('|');
+                    if (parts.length >= 4) {
+                        const product = {
+                            title: parts[0].trim(),
+                            img: parts[1].trim(),
+                            desc: parts[2].trim(),
+                            specs: parts[3].trim()
+                        };
+                        htmlContent += generateProductHTML(product);
+                    }
+                });
+
+                if (htmlContent !== '') {
+                    container.innerHTML = htmlContent;
+                } else {
+                    throw new Error("El archivo .txt está vacío");
+                }
+            } catch (error) {
+                console.warn(`Usando datos por defecto para ${containerId}:`, error.message);
+                let defaultHTML = '';
+                defaultData.forEach(prod => { defaultHTML += generateProductHTML(prod); });
+                container.innerHTML = defaultHTML;
+            }
+            lucide.createIcons();
+        }
+
+        // --- INICIALIZACIÓN ---
+        window.addEventListener('DOMContentLoaded', () => {
+            // Se cargarán las 11 categorías desde sus respectivos .txt
+            loadProductsFromTxt('overoles.txt', 'grid-overoles', DEFAULT_OVEROLES);
+            loadProductsFromTxt('camisolas.txt', 'grid-camisolas', DEFAULT_CAMISOLAS);
+            loadProductsFromTxt('chamarras_alta_visibilidad.txt', 'grid-chamarras-alta', DEFAULT_CHAMARRAS_ALTA);
+            loadProductsFromTxt('chamarras.txt', 'grid-chamarras', DEFAULT_CHAMARRAS);
+            loadProductsFromTxt('chalecos_alta_visibilidad.txt', 'grid-chalecos-alta', DEFAULT_CHALECOS_ALTA);
+            loadProductsFromTxt('chalecos_ejecutivos.txt', 'grid-chalecos-ejec', DEFAULT_CHALECOS_EJEC);
+            loadProductsFromTxt('batas_laboratorio.txt', 'grid-batas', DEFAULT_BATAS);
+            loadProductsFromTxt('camisas_gabardina.txt', 'grid-camisas-gabardina', DEFAULT_CAMISAS_GAB);
+            loadProductsFromTxt('camisas_oxford.txt', 'grid-camisas-oxford', DEFAULT_CAMISAS_OX);
+            loadProductsFromTxt('filipinas.txt', 'grid-filipinas', DEFAULT_FILIPINAS);
+            loadProductsFromTxt('uniformes_guardias.txt', 'grid-uniformes-guardias', DEFAULT_UNIFORMES_G);
+            
+            lucide.createIcons();
         });
 
-        // Lógica del Modal "Cotizar" (Pequeño)
-        const modal = document.getElementById('quote-modal');
-        const modalProductName = document.getElementById('modal-product-name');
-        const modalWhatsappBtn = document.getElementById('modal-whatsapp-btn');
+        // --- LÓGICA DE INTERFAZ (MENÚS Y MODALES) ---
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
 
+        // Modal "Cotizar" (Pequeño)
+        const modal = document.getElementById('quote-modal');
         function openModal(productName) {
-            modalProductName.innerText = productName;
-            const message = `Hola LP y RIVAS, estoy interesado en cotizar: ${productName}`;
-            modalWhatsappBtn.href = `https://wa.me/527291658980?text=${encodeURIComponent(message)}`;
+            document.getElementById('modal-product-name').innerText = productName;
+            document.getElementById('modal-whatsapp-btn').href = `https://wa.me/525625029019?text=${encodeURIComponent('Hola LP.RIVAS, estoy interesado en cotizar: ' + productName)}`;
             modal.classList.remove('hidden');
         }
+        function closeModal() { modal.classList.add('hidden'); }
 
-        function closeModal() {
-            modal.classList.add('hidden');
-        }
-
-        // Lógica del Modal "Detalle de Producto" (Grande)
+        // Modal Detalle de Producto (Grande)
         const productModal = document.getElementById('product-detail-modal');
-        const detailTitle = document.getElementById('detail-title');
-        const detailDesc = document.getElementById('detail-desc');
-        const detailSpecs = document.getElementById('detail-specs');
-        const detailIconContainer = document.getElementById('detail-image-container');
-        const detailWhatsappBtn = document.getElementById('detail-whatsapp-btn');
-
         function openProductDetail(title, imageOrIcon, description, specs) {
-            // Llenar datos
-            detailTitle.innerText = title;
-            detailDesc.innerText = description;
-            detailSpecs.innerText = specs;
+            document.getElementById('detail-title').innerText = title;
+            document.getElementById('detail-desc').innerText = description;
+            document.getElementById('detail-specs').innerText = specs;
             
-            // Renderizar Imagen o Icono
+            const iconContainer = document.getElementById('detail-image-container');
             if (imageOrIcon.startsWith('http')) {
-                detailIconContainer.innerHTML = `<img src="${imageOrIcon}" alt="${title}" class="w-full h-auto max-h-[500px] object-contain rounded-lg drop-shadow-xl">`;
+                iconContainer.innerHTML = `<img src="${imageOrIcon}" alt="${title}" class="w-full h-auto max-h-[500px] object-contain rounded-lg drop-shadow-xl">`;
             } else {
-                detailIconContainer.innerHTML = `<i data-lucide="${imageOrIcon}" class="h-48 w-48 text-corporate"></i>`;
-                lucide.createIcons(); // Refrescar iconos para el nuevo contenido
+                iconContainer.innerHTML = `<i data-lucide="${imageOrIcon}" class="h-48 w-48 text-corporate"></i>`;
+                lucide.createIcons(); 
             }
 
-            // Configurar botón de WhatsApp
-            const message = `Hola LP y RIVAS, vi el producto "${title}" en su catálogo web y me interesa una cotización.`;
-            detailWhatsappBtn.href = `https://wa.me/527291658980?text=${encodeURIComponent(message)}`;
-
-            // Mostrar modal
+            document.getElementById('detail-whatsapp-btn').href = `https://wa.me/525625029019?text=${encodeURIComponent('Hola LP.RIVAS, vi el producto "' + title + '" en su catálogo web y me interesa una cotización.')}`;
             productModal.classList.remove('hidden');
         }
+        function closeProductModal() { productModal.classList.add('hidden'); }
 
-        function closeProductModal() {
-            productModal.classList.add('hidden');
-        }
-
-        // Cerrar modales al hacer click fuera
         window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-            if (event.target == productModal) {
-                closeProductModal();
-            }
+            if (event.target == modal) closeModal();
+            if (event.target == productModal) closeProductModal();
         }
 
-        // Función para enviar formulario del footer a WhatsApp
         function sendToWhatsapp() {
             const name = document.getElementById('form-name').value;
             const phone = document.getElementById('form-phone').value;
             const product = document.getElementById('contact-product').value;
             const message = document.getElementById('form-message').value;
-
-            if(!name || !phone) {
-                alert("Por favor ingrese su nombre y teléfono.");
-                return;
-            }
-
-            const text = `*Nueva Solicitud Web LP y RIVAS*%0A---------------------------%0A*Nombre:* ${name}%0A*Teléfono:* ${phone}%0A*Interés:* ${product}%0A*Mensaje:* ${message}`;
-            const url = `https://wa.me/527291658980?text=${text}`;
-            window.open(url, '_blank');
+            if(!name || !phone) return alert("Por favor ingrese su nombre y teléfono.");
+            const text = `*Nueva Solicitud Web LP.RIVAS*%0A---------------------------%0A*Nombre:* ${name}%0A*Teléfono:* ${phone}%0A*Interés:* ${product}%0A*Mensaje:* ${message}`;
+            window.open(`https://wa.me/525625029019?text=${text}`, '_blank');
         }
     </script>
 </body>
