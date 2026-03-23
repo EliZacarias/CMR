@@ -436,56 +436,83 @@
             </div>`;
         }
 
-        // --- 3. LECTOR DE ARCHIVOS .TXT ---
-        async function loadProductsFromTxt(fileName, containerId, defaultData) {
+        // --- 3. MAPEO DE CATEGORÍAS A CONTENEDORES ---
+        const CATEGORY_MAP = {
+            'overoles': { containerId: 'grid-overoles', default: DEFAULT_OVEROLES },
+            'camisolas': { containerId: 'grid-camisolas', default: DEFAULT_CAMISOLAS },
+            'chamarras': { containerId: 'grid-chamarras', default: DEFAULT_CHAMARRAS },
+            'chalecos': { containerId: 'grid-chalecos', default: DEFAULT_CHALECOS },
+            'camisas': { containerId: 'grid-camisas', default: DEFAULT_CAMISAS },
+            'batas': { containerId: 'grid-batas', default: DEFAULT_BATAS },
+            'filipinas': { containerId: 'grid-filipinas', default: DEFAULT_FILIPINAS },
+            'uniformes': { containerId: 'grid-uniformes-guardias', default: DEFAULT_UNIFORMES_G }
+        };
+
+        // --- 4. FUNCIÓN PARA RENDERIZAR PRODUCTOS EN UNA CATEGORÍA ---
+        function renderProducts(containerId, products) {
             const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            let htmlContent = '';
+            products.forEach(prod => {
+                const product = {
+                    title: prod.title,
+                    img: prod.image_url || prod.img,
+                    desc: prod.description || prod.desc,
+                    specs: prod.specs
+                };
+                htmlContent += generateProductHTML(product);
+            });
+            container.innerHTML = htmlContent;
+            lucide.createIcons();
+        }
+
+        // --- 5. CARGAR PRODUCTOS DESDE LA API ---
+        async function loadProductsFromAPI() {
             try {
-                const response = await fetch(fileName);
-                if (!response.ok) throw new Error("Archivo no encontrado o bloqueado");
+                const response = await fetch('/api/products');
+                if (!response.ok) throw new Error("Error al cargar productos");
                 
-                const text = await response.text();
-                const lines = text.trim().split('\n');
-                let htmlContent = '';
-
-                lines.forEach(line => {
-                    const parts = line.split('|');
-                    if (parts.length >= 4) {
-                        const product = {
-                            title: parts[0].trim(),
-                            img: parts[1].trim(),
-                            desc: parts[2].trim(),
-                            specs: parts[3].trim()
-                        };
-                        htmlContent += generateProductHTML(product);
+                const data = await response.json();
+                
+                // Si hay datos de la BD, renderizar por categoría
+                let hasData = false;
+                for (const [code, info] of Object.entries(data)) {
+                    const mapping = CATEGORY_MAP[code];
+                    if (mapping && info.products && info.products.length > 0) {
+                        renderProducts(mapping.containerId, info.products);
+                        hasData = true;
                     }
-                });
+                }
 
-                if (htmlContent !== '') {
-                    container.innerHTML = htmlContent;
+                // Si no hubo datos de la API, cargar defaults
+                if (!hasData) {
+                    loadDefaults();
                 } else {
-                    throw new Error("El archivo .txt está vacío");
+                    // Cargar defaults para categorías sin productos
+                    for (const [code, mapping] of Object.entries(CATEGORY_MAP)) {
+                        if (!data[code] || !data[code].products || data[code].products.length === 0) {
+                            renderProducts(mapping.containerId, mapping.default);
+                        }
+                    }
                 }
             } catch (error) {
-                console.warn(`Usando datos por defecto para ${containerId}:`, error.message);
-                let defaultHTML = '';
-                defaultData.forEach(prod => { defaultHTML += generateProductHTML(prod); });
-                container.innerHTML = defaultHTML;
+                console.warn('Usando datos por defecto:', error.message);
+                loadDefaults();
             }
-            lucide.createIcons();
+        }
+
+        // --- 6. CARGAR DATOS POR DEFECTO ---
+        function loadDefaults() {
+            for (const [code, mapping] of Object.entries(CATEGORY_MAP)) {
+                renderProducts(mapping.containerId, mapping.default);
+            }
         }
 
         // --- INICIALIZACIÓN ---
         window.addEventListener('DOMContentLoaded', () => {
-            // Se cargarán las 8 categorías principales desde sus respectivos .txt
-            loadProductsFromTxt('overoles.txt', 'grid-overoles', DEFAULT_OVEROLES);
-            loadProductsFromTxt('camisolas.txt', 'grid-camisolas', DEFAULT_CAMISOLAS);
-            loadProductsFromTxt('chamarras.txt', 'grid-chamarras', DEFAULT_CHAMARRAS);
-            loadProductsFromTxt('chalecos.txt', 'grid-chalecos', DEFAULT_CHALECOS);
-            loadProductsFromTxt('camisas.txt', 'grid-camisas', DEFAULT_CAMISAS);
-            loadProductsFromTxt('batas_laboratorio.txt', 'grid-batas', DEFAULT_BATAS);
-            loadProductsFromTxt('filipinas.txt', 'grid-filipinas', DEFAULT_FILIPINAS);
-            loadProductsFromTxt('uniformes_guardias.txt', 'grid-uniformes-guardias', DEFAULT_UNIFORMES_G);
-            
+            // Cargar productos desde la API (Base de Datos)
+            loadProductsFromAPI();
             lucide.createIcons();
         });
 
