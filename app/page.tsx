@@ -1,5 +1,9 @@
-import { redirect } from "next/navigation";
-
 export default function Home() {
-  redirect("/index.html");
+  return (
+    <iframe
+      src="/index.html"
+      className="w-full h-screen border-0"
+      title="LP.RIVAS Catálogo"
+    />
+  );
 }
