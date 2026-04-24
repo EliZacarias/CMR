@@ -41,18 +41,18 @@ import {
 import { Plus, Pencil, Trash2, LogOut, Package, Image } from 'lucide-react'
 
 interface Category {
-  id: number
+  id: string
   code: string
   name: string
 }
 
 interface Product {
-  id: number
+  id: string
   title: string
   image_url: string
   description: string
   specs: string
-  category_id: number
+  category_id: string
   categories?: Category
 }
 
@@ -114,7 +114,7 @@ export default function AdminPage() {
       image_url: product.image_url,
       description: product.description,
       specs: product.specs,
-      category_id: product.category_id.toString(),
+      category_id: product.category_id,
     })
     setIsDialogOpen(true)
   }
@@ -127,7 +127,7 @@ export default function AdminPage() {
       image_url: formData.image_url,
       description: formData.description,
       specs: formData.specs,
-      category_id: parseInt(formData.category_id),
+      category_id: formData.category_id,
     }
 
     if (editingProduct) {
@@ -144,7 +144,7 @@ export default function AdminPage() {
     loadData()
   }
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     if (confirm('¿Estás seguro de eliminar este producto?')) {
       await supabase.from('products').delete().eq('id', id)
       loadData()
@@ -153,7 +153,7 @@ export default function AdminPage() {
 
   const filteredProducts = selectedCategory === 'all' 
     ? products 
-    : products.filter(p => p.category_id.toString() === selectedCategory)
+    : products.filter(p => p.category_id === selectedCategory)
 
   if (isLoading) {
     return (
@@ -223,7 +223,7 @@ export default function AdminPage() {
                   <SelectContent>
                     <SelectItem value="all">Todas las categorías</SelectItem>
                     {categories.map(cat => (
-                      <SelectItem key={cat.id} value={cat.id.toString()}>{cat.name}</SelectItem>
+                      <SelectItem key={cat.id} value={cat.id}>{cat.name}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -288,7 +288,7 @@ export default function AdminPage() {
                           </SelectTrigger>
                           <SelectContent>
                             {categories.map(cat => (
-                              <SelectItem key={cat.id} value={cat.id.toString()}>{cat.name}</SelectItem>
+                              <SelectItem key={cat.id} value={cat.id}>{cat.name}</SelectItem>
                             ))}
                           </SelectContent>
                         </Select>
